@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
+	port := "8000"
 	http.HandleFunc("/_ping", ping)
-	log.Fatal(http.ListenAndServe("localhost:8000", nil))
+	http.HandleFunc("/guess-the-age", handleGuessTheAgePost)
+	log.Printf("Server started at port %v", port)
+	log.Fatal(http.ListenAndServe("localhost:" + port, nil))
 }
