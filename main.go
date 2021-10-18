@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	http.HandleFunc("/_ping", ping)
+	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
