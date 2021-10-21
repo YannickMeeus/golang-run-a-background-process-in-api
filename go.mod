@@ -1,3 +1,3 @@
-module github.com/silly-goose-software/host-an-api
+module github.com/YannickMeeus/host-an-api
 
 go 1.17
